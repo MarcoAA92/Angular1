@@ -1,0 +1,31 @@
+<div class="container mat-form-field">
+    <h1 *ngIf="isAddMode">Add Post</h1>
+     <h1 *ngIf="!isAddMode">Edit Post</h1>
+    <mat-dialog-content [formGroup]="dialogdata">
+        <mat-form-field>
+            <input matInput class="form-control" value="title" formControlName="title" placeholder = "Title" required>
+        </mat-form-field><br>
+        <mat-form-field class="example-full-width">
+            <input matInput class="form-control" value="description" formControlName="description" placeholder = "Description" required>
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Category</mat-label>
+            <select matNativeControl class="form-control" value="category" formControlName="category"  required>
+              <option value="travel">Travel</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="business">Business</option>
+              <option value="food">Food</option>
+              <option value="work">Work</option>
+            </select>
+          </mat-form-field><br>
+          <mat-form-field>
+            <input matInput class="form-control" value="image" formControlName="image" required  placeholder="Url of the image">
+        </mat-form-field>
+
+    </mat-dialog-content> 
+
+    <mat-dialog-actions class="pull-right">
+        <button class="mat-raised-button" (click)="closeDialog()">Close</button>
+        <button class="mat-raised-button mat-primary" [disabled]="!dialogdata.valid" (click)="saveDialog()">Save</button>
+    </mat-dialog-actions>
+</div>

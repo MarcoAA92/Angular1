@@ -1,0 +1,32 @@
+
+/* center element*/
+.center {
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  /* Font Size Letter H1*/
+  .display4{
+    font-size: 45px;
+  }
+  .button__padding {
+   padding-bottom: 20px;
+   padding-right:10px;
+  }
+  
+  /* Button Create*/
+  .button--orange {
+    background-color: coral;
+  }
+  
+  .button__float{
+      position:fixed;
+      width:50px;
+      height:50px;
+      top:15%;
+      right:40px;
+      z-index:1;
+  }
+  

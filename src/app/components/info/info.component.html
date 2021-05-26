@@ -1,0 +1,51 @@
+
+<mat-card class="example-card">
+  <button [routerLink]="['']" >View Posts</button> 
+  <mat-card-header [ngStyle]="{'background-image':'url(' + cards.image +  ')'}"  [style]="backgroundHeader" > 
+      <mat-card-title   >{{ cards.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card-subtitle>{{ cards.category }}</mat-card-subtitle>
+      <p>
+        {{ cards.description}}
+      </p>
+      <div *ngIf="cards.comments!==undefined">
+          <p>{{cards.comments.length}} comments </p>
+      </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-grid-list *ngFor="let element of comments" cols="1" rowHeight="7:2">
+    <mat-grid-tile *ngFor="let comment of element.comments"  >
+      <mat-card class="example-card">
+        <i class="material-icons">account_circle</i>
+        <mat-card-header>
+          <mat-card-title>{{ comment.author}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ comment.content}}
+          </p>
+        </mat-card-content> 
+      </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    New Comment
+  </mat-card-header> 
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
+          <div class="form-group">
+              <input type="text" class="form-control" value="author" placeholder="Author" formControlName="author">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" value="comment"  placeholder="Comment" formControlName="comment">
+        </div>
+          <div class="form-group">
+              <button class="btn btn-danger btn-block btn-lg" [disabled]="!form.valid">Create</button>
+          </div>
+      </form>
+    </mat-card-content>
+</mat-card>

@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* center element*/
+.center {
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  
+  /* title padding*/
+  .title_padding{
+    padding-bottom: 40px;
+  }
+  
+  /* img title padding*/
+  .img--padding{
+    width: 50%;
+    padding-top: 30px;
+  }
+  
+  /* roboto font*/
+  .heading {
+    font-family: 'Roboto', sans-serif;
+  }
+  /* Font Size Letter H1*/
+  .display4{
+    font-size: 45px;
+  }
+  .button__padding {
+   padding-bottom: 20px;
+   padding-right:10px;
+  }
+  
+  /* Button Create*/
+  .button--orange {
+    background-color: coral;
+  }
+  
+  .button__float{
+      position:fixed;
+      width:50px;
+      height:50px;
+      top:15%;
+      right:40px;
+      z-index:1;
+  }
+  
+  /* Media Screen*/
+  @media screen and (max-width: 767px){
+    .button__float{
+        top:20%;
+    }
+  }
+  
+  .post{
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+    width: 100%;
+    color: #fff;
+  }
